@@ -1,5 +1,5 @@
 node_modules
-dist
+
 .env
 
 # Logs
@@ -12,7 +12,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
+
 dist-ssr
 *.local
 
