@@ -9,7 +9,9 @@ dbConnect();
 
 const app = express();
 
-app.use(express.json());   
+app.use(express.json());  
+
+app.use(express.static('dist'));
 
 
 app.use('/api/users', require('./routes/user-routes.js'));
@@ -30,7 +32,7 @@ app.use('/api/feedback', require('./routes/feedback-routes.js'))
 
 app.use('/api/payslip', require('./routes/payslip-routes.js'))
 
-app.use('/api/task', require('./routes/task-routes.js'))
+app.use('/api/task', require('./routes/task-routes.js'));
 
 app.use(errorHandler);
 
