@@ -5,10 +5,17 @@ const dbConnect = require('./config/db-connect.js');
 const errorHandler = require('./middlewares/error-handler.js');
 
 
+
 dbConnect();
 
-const app = express();
+const loggerMiddleware = (req,res,next)=> {
+    
+    req.url.includes("/api") && console.log(req.url);
+    next();
+}
 
+const app = express();
+app.use(loggerMiddleware);
 app.use(express.json());  
 
 app.use(express.static('dist'));
