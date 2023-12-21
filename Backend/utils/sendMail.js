@@ -20,8 +20,8 @@ const sendMail = ({receipientEmail, receipientName, task, managerName}) => {
             port: 5500,
             service: 'gmail',
             auth: {
-                user: 'rutvikraut31@gmail.com',
-                pass: 'iyfi hjsp ucje uexc'
+                user: 'ems.rutvik@gmail.com',
+                pass: 'skmc pete dkzb wqgk'
                 //app password from google account
             },
         });

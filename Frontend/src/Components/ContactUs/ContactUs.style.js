@@ -27,6 +27,4 @@ export const ContactUsForm = styled.p`
 export const ContactIcon = styled.p`
 font-size: 3rem;
 text-align: center;
-// color: black;
-// cursor: pointer;
 `;

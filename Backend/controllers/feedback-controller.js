@@ -34,10 +34,6 @@ const checkFeedback = asyncHandler(async (req, res) => {
         empFeedName: req.params.empfeedname
     });
 
-    // const feed = feedback.filter((obj) =>
-    //     obj.empFeedName == req.params.empfeedname
-    // )
-
     if (feedback) {
         res.status(403)
         throw new Error('You have Already sent feedback for same');

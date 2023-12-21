@@ -1,5 +1,5 @@
-import React from 'react'
-import { AccDeniedDiv, AccDeniedMessage } from './access-denied.style'
+import React from 'react';
+import { AccDeniedDiv, AccDeniedMessage } from './access-denied.style';
 
 const AccessDenied = () => {
   return (

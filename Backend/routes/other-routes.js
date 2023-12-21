@@ -1,6 +1,6 @@
 const express = require('express');
 const tokenValidation = require('../middlewares/token-handler');
-const {getLocations, getTotalRegs, updateTotalRegs, leavesRemain}  =require('../controllers/other-controller.js')
+const {getLocations, getTotalRegs, updateTotalRegs, leavesRemain}  =require('../controllers/other-controller.js');
 
 const router = express.Router();
 

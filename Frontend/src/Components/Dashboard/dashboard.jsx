@@ -5,7 +5,7 @@ import axios from "axios";
 import Navbar from "../Navbar/navbar";
 import Footer from "../Footer/footer";
 import NameInitials from "./name-initials";
-import BackToTop from '../Home/back-to-top'
+import BackToTop from '../Home/back-to-top';
 import {
     UserDetails,
     Quote,
@@ -25,7 +25,7 @@ const Dashboard = () => {
     }, [])
 
     const fetchdata = async () => {
-        await axios.get(`https://ems-backend-ksng.onrender.com/api/users/currentUser`, {
+        await axios.get('https://ems-backend-ksng.onrender.com/api/users/currentUser', {
             headers: {
                 'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
             }

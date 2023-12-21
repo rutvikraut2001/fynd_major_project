@@ -15,7 +15,7 @@ const ContactUs = () => {
   const navigate = useNavigate();
 
   const onMailClick = () => {
-    window.location.href = 'mailto:rutvikraut1@gmail.com';
+    window.location.href = 'mailto:ems.rutvik@gmail.com';
   }
 
   return (
@@ -29,7 +29,6 @@ const ContactUs = () => {
       </ContactUsForm>
       <ContactIcon>
         <Link to="mailto:rutvikraut1@gmail.com"  style={{textDecoration:"none", color:"black"}}><IoMdMail />  </Link> &nbsp;
-        {/* <button onClick={onMailClick}><IoMdMail /></button> */}
        <Link to="https://www.linkedin.com/in/rutvik-raut-961884211/"  style={{textDecoration:"none", color:"black"}}><FaLinkedin /> </Link> &nbsp;
        <Link to="https://twitter.com/Rutvik_Raut_30/"  style={{textDecoration:"none", color:"black"}}><FaXTwitter />  </Link> &nbsp;
        </ContactIcon>

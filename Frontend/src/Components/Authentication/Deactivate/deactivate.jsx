@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { useNavigate, Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Swal from "sweetalert2";
@@ -17,7 +17,7 @@ import {
   SubmitButton,
   ErrorMessage
 } from '../Register/forms.style.js';
-import GLlogo from '../../../Utils/Images/EMS-logo.png'
+import GLlogo from '../../../Utils/Images/EMS-logo.png';
 
 const Deactivate = () => {
   const navigate = useNavigate();

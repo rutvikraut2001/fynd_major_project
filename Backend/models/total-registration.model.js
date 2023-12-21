@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const totalRegSchema = new mongoose.Schema({
     total_registrations:{

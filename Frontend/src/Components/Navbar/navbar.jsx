@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useState, useEffect, useRef } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import GLlogo from '../../Utils/Images/EMS-logo.png'
+import GLlogo from '../../Utils/Images/EMS-logo.png';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import LogoutIcon from '@mui/icons-material/Logout';
 

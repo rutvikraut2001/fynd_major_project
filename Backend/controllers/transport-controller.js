@@ -32,7 +32,7 @@ const getTranspReq = asyncHandler(async (req,res) => {
     const transpReq = await TranspRequest.findById(req.params.id);
     if(!transpReq){
         res.status(404)
-        throw new Error('Trasnport-Request not found')
+        throw new Error('Trasnport-Request not found');
     }
     res.status(200).json(transpReq);
 });
@@ -43,12 +43,12 @@ const updateTranspReq = asyncHandler(async (req,res) => {
     const {actionBy, rejectReason, status} = req.body;
     if(!actionBy || !rejectReason || !status){
         res.status = 401
-        throw new Error('All fields are mandatory!')
+        throw new Error('All fields are mandatory!');
     }
     const transpReq = await TranspRequest.findById(req.params.id)
     if(!transpReq){
         res.status(404)
-        throw new Error('Trasnport-Request not found')
+        throw new Error('Trasnport-Request not found');
     }
     transpReq.actionBy = actionBy;
     transpReq.rejectReason = rejectReason;
@@ -67,7 +67,7 @@ const getTranspReqsEmpID = asyncHandler(async (req,res)=> {
     const transpReq = await TranspRequest.find({empID: req.params.empID})
     if(!transpReq){
         res.status(404)
-        throw new Error('Trasnport-Request not found')
+        throw new Error('Trasnport-Request not found');
     }
     res.status(200).json(transpReq)
 })
