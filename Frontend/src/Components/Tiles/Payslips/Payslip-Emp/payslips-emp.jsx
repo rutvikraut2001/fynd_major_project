@@ -65,7 +65,7 @@ const PayslipsEmp = () => {
     }, []);
 
     const fetchData = async () => {
-        await axios.get("/api/payslip/curr_emp", {
+        await axios.get("https://ems-backend-ksng.onrender.com/api/payslip/curr_emp", {
             headers: {
                 'Authorization': `Bearer ${localStorage.token}`
             }

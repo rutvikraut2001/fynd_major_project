@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const dbConnect = async () => {
     try{
@@ -9,8 +9,8 @@ const dbConnect = async () => {
         `)
     }
     catch(err){
-        console.log(err)
-        process.exit(1)
+        console.log(err);
+        process.exit(1);
     }
 }
 

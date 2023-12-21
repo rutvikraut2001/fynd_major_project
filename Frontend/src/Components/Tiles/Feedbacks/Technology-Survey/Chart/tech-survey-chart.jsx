@@ -22,7 +22,7 @@ const TechSurveyChart = () => {
   }, []);
 
   const fetchData = () => {
-    axios.get(`/api/tech-survey`, {
+    axios.get(`https://ems-backend-ksng.onrender.com/api/tech-survey`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`
       }

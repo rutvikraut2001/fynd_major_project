@@ -27,7 +27,7 @@ const FeedChart = () => {
   }, [])
 
   const fetchData = async () => {
-    await axios.get('/api/feedback', {
+    await axios.get('https://ems-backend-ksng.onrender.com/api/feedback', {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`
       }

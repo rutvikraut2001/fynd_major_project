@@ -55,7 +55,7 @@ const Register = () => {
   }, [])
 
   const fetchData = async () => {
-    await axios.get('/api/total-registrations')
+    await axios.get('https://ems-backend-ksng.onrender.com/api/total-registrations')
       .then((res) => {
         setTotalRegistered(res.data.total_registrations + 1);
         setUser({ ...user, "empID": res.data.total_registrations + 1001 })
@@ -120,16 +120,16 @@ const Register = () => {
     }
     else {
       setError(null);
-      await axios.post('/api/users/register', postObj)
+      await axios.post('https://ems-backend-ksng.onrender.com/api/users/register', postObj)
         .then(() => {
           setError(null);
-          axios.post("/api/leaves-remain", {       //we require this in leave-management-emp
+          axios.post("https://ems-backend-ksng.onrender.com/api/leaves-remain", {       //we require this in leave-management-emp
             "empID": empID,
             "empName": `${fname} ${lname}`,
             //other fields set default in schema so no need to post them
           })
             .then(() => {
-              axios.put("/api/total-registrations", {
+              axios.put("https://ems-backend-ksng.onrender.com/api/total-registrations", {
                 total_registrations: totalRegistered,      //update +1
               })
             });

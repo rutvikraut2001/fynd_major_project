@@ -74,7 +74,7 @@ function PayslipsAdmin() {
   }, []);
 
   const fetchData = async () => {
-    await axios.get("/api/users", {
+    await axios.get("https://ems-backend-ksng.onrender.com/api/users", {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`
       }
@@ -97,7 +97,7 @@ function PayslipsAdmin() {
   };
 
   const viewDetails = async (id) => {
-    await axios.get(`/api/users/${id}`, {
+    await axios.get(`https://ems-backend-ksng.onrender.com/api/users/${id}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`
       }
@@ -166,7 +166,7 @@ function PayslipsAdmin() {
       month: getDateVal[1] ? getDateVal[1] : null
     }
 
-    await axios.post("/api/payslip", upObj, {
+    await axios.post("https://ems-backend-ksng.onrender.com/api/payslip", upObj, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`
       }

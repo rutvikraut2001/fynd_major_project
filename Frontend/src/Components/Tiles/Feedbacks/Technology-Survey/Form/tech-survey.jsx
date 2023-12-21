@@ -55,7 +55,7 @@ const TechSurvey = () => {
     }
     else {
       setError(null);
-      await axios.post("/api/tech-survey", techData, {
+      await axios.post("https://ems-backend-ksng.onrender.com/api/tech-survey", techData, {
         headers: {
           'Authorization': `Bearer ${localStorage.token}`
         }

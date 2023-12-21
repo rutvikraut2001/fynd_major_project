@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 require('dotenv').config();
 const port = process.env.PORT;
 const dbConnect = require('./config/db-connect.js');
 const errorHandler = require('./middlewares/error-handler.js');
+
 
 
 
@@ -16,6 +18,7 @@ const loggerMiddleware = (req,res,next)=> {
 
 const app = express();
 app.use(loggerMiddleware);
+app.use(cors());
 app.use(express.json());  
 
 app.use(express.static('dist'));

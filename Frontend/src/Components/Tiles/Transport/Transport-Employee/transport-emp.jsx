@@ -132,7 +132,7 @@ const TransportEmp = () => {
   }, []);                          //only once when load
 
   const fetchData = async () => {
-    await axios.get(`/api/transport-request/empID/${empID}`, {
+    await axios.get(`https://ems-backend-ksng.onrender.com/api/transport-request/empID/${empID}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
@@ -145,7 +145,7 @@ const TransportEmp = () => {
         console.log(err)
       });
 
-    await axios.get(`/api/locations`, {
+    await axios.get(`https://ems-backend-ksng.onrender.com/api/locations`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
@@ -162,7 +162,7 @@ const TransportEmp = () => {
   const [transpDetails, setTranspDetails] = useState({})
 
   const viewTranspDetails = async (uid) => {
-    await axios.get(`/api/transport-request/${uid}`, {
+    await axios.get(`https://ems-backend-ksng.onrender.com/api/transport-request/${uid}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
@@ -220,7 +220,7 @@ const TransportEmp = () => {
     }
     else {
       setError(null);
-      await axios.post("/api/transport-request", transRequest, {
+      await axios.post("https://ems-backend-ksng.onrender.com/api/transport-request", transRequest, {
         headers: {
           'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
         }

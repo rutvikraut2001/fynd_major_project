@@ -1,12 +1,12 @@
-const asyncHandler = require('express-async-handler')
-const AccessRequest = require('../models/access-request.model')
+const asyncHandler = require('express-async-handler');
+const AccessRequest = require('../models/access-request.model');
 
 //POST Transport-Request
 const createAccessReq = asyncHandler(async (req,res) => {
     const {empID, empName, requestFor, manager, reason} = req.body;
     if(!empName || !empID || !requestFor || !manager || !reason){
         res.status(401)
-        throw new Error('All fields are mandatory!')
+        throw new Error('All fields are mandatory!');
     }
     
     const accessReq = await AccessRequest.create(req.body);
@@ -32,7 +32,7 @@ const getAccessReq = asyncHandler(async (req,res) => {
     const accessReq = await AccessRequest.findById(req.params.id);
     if(!accessReq){
         res.status(404)
-        throw new Error('Access-Request not found')
+        throw new Error('Access-Request not found');
     }
     res.status(200).json(accessReq);
 });
@@ -43,7 +43,7 @@ const updateAccessReq = asyncHandler(async (req,res) => {
     const {actionBy, rejectReason, status} = req.body;
     if(!actionBy || !rejectReason || !status){
         res.status = 401
-        throw new Error('All fields are mandatory!')
+        throw new Error('All fields are mandatory!');
     }
     const accessReq = await AccessRequest.findById(req.params.id)
     if(!accessReq){
@@ -68,10 +68,10 @@ const getAccessReqsEmpID = asyncHandler(async (req,res)=> {
     
     if(!accessReq){
         res.status(404)
-        throw new Error('Access-Request not found')
+        throw new Error('Access-Request not found');
     }
     
-    res.status(200).json(accessReq)
+    res.status(200).json(accessReq);
 })
 
 module.exports = { createAccessReq, getAccessReqs, getAccessReq, updateAccessReq, getAccessReqsEmpID }

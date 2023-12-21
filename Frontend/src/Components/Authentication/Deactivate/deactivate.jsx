@@ -17,7 +17,7 @@ import {
   SubmitButton,
   ErrorMessage
 } from '../Register/forms.style.js';
-import GLlogo from '../../../Utils/Images/GL-logo.jpg'
+import GLlogo from '../../../Utils/Images/EMS-logo.png'
 
 const Deactivate = () => {
   const navigate = useNavigate();
@@ -72,7 +72,7 @@ const Deactivate = () => {
     }
     else {
       setError(null);
-      await axios.delete(`/api/users/${id}`, {
+      await axios.delete(`https://ems-backend-ksng.onrender.com/api/users/${id}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
         }

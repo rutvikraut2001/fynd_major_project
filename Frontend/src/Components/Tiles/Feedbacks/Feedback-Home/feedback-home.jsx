@@ -30,7 +30,7 @@ const FeedbackHome = () => {
 
 //from token_validation middleware's decoded data we get user's id in backend so no need to send user's id in url
        
-        await axios.get(`/api/company-survey/user_id`, {            
+        await axios.get(`https://ems-backend-ksng.onrender.com/api/company-survey/user_id`, {            
             headers: {
                 'Authorization': `Bearer ${localStorage.token}`
             }
@@ -40,7 +40,7 @@ const FeedbackHome = () => {
             })
 
 //-----------------------------------------------------------------------------
-        await axios.get(`/api/tech-survey/user_id`, {
+        await axios.get(`https://ems-backend-ksng.onrender.com/api/tech-survey/user_id`, {
             headers: {
                 'Authorization': `Bearer ${localStorage.token}`
             }

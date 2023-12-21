@@ -44,7 +44,7 @@ const FeedForm = () => {
   }, [])
 
   const fetchData = async () => {
-    await axios.get(`/api/users`, {
+    await axios.get(`https://ems-backend-ksng.onrender.com/api/users`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`
       }
@@ -79,7 +79,7 @@ const FeedForm = () => {
       }
       else {
         setError(null);
-        axios.post("/api/feedback", feedData, {
+        axios.post("https://ems-backend-ksng.onrender.com/api/feedback", feedData, {
           headers: {
             'Authorization': `Bearer ${localStorage.token}`
           }
@@ -159,7 +159,7 @@ const FeedForm = () => {
 
   useEffect(() => {
     if (empFeedName) {
-      axios.get(`/api/feedback/empfeed/${empFeedName}`, {
+      axios.get(`https://ems-backend-ksng.onrender.com/api/feedback/empfeed/${empFeedName}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.token}`
         }

@@ -68,7 +68,7 @@ const Login = () => {
     }
     else {
       setError(null);
-      await axios.post('/api/users/login', user)
+      await axios.post(`https://ems-backend-ksng.onrender.com/api/users/login`, user)
         .then((res)=> {
           localStorage.token = res.data.accesstoken;   //set jwt token to localstorage
           dispatch({type: 'LOGIN'});

@@ -81,7 +81,7 @@ const  EmpListEmp = () => {
   }, []);
 
   const fetchData = async() => {
-    await axios.get("/api/task", {             //filter by user_id in backend
+    await axios.get("https://ems-backend-ksng.onrender.com/api/task", {             //filter by user_id in backend
       headers: {
         'Authorization': `Bearer ${localStorage.token}` //for verification (IMP)
       }
@@ -105,7 +105,7 @@ const  EmpListEmp = () => {
 
   //--------------------Individual task data -----------
   const  viewDetails = async (id) => {
-    await axios.get(`/api/task/${id}`, {
+    await axios.get(`https://ems-backend-ksng.onrender.com/api/task/${id}`, {
       headers: {
           'Authorization': `Bearer ${localStorage.token}`//for verification (IMP)
       }

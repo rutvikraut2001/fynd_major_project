@@ -128,7 +128,7 @@ const AccessPrivilegeEmp = () => {
   }, []);
 
   const fetchData = async () => {
-    await axios.get(`/api/access-request/empID/${empID}`, {
+    await axios.get(`https://ems-backend-ksng.onrender.com/api/access-request/empID/${empID}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
@@ -139,7 +139,7 @@ const AccessPrivilegeEmp = () => {
       })
 
     // -------------------Manager List Array of Data------------------------//
-    // await axios.get(`/api/users`)
+    // await axios.get(`https://ems-backend-ksng.onrender.com/api/users`)
     //   .then((res) => {
     //     setManagerList(res.data.filter((user) => 
     //        user.designation === "Manager"
@@ -147,7 +147,7 @@ const AccessPrivilegeEmp = () => {
     //   })
 
     //OR
-    await axios.get('/api/users/managers', {
+    await axios.get('https://ems-backend-ksng.onrender.com/api/users/managers', {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
@@ -161,7 +161,7 @@ const AccessPrivilegeEmp = () => {
   const [accessDetails, setAccessDetails] = useState({})
 
   const viewAccessDetails = async (uid) => {
-    await axios.get(`/api/access-request/${uid}`, {
+    await axios.get(`https://ems-backend-ksng.onrender.com/api/access-request/${uid}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
@@ -188,7 +188,7 @@ const AccessPrivilegeEmp = () => {
     }
     else {
       setError(null);
-      await axios.post("/api/access-request", accessRequest, {
+      await axios.post("https://ems-backend-ksng.onrender.com/api/access-request", accessRequest, {
         headers: {
           'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
         }

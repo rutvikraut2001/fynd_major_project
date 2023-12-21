@@ -1,5 +1,5 @@
-const asyncHandler = require('express-async-handler')
-const TechSurvey = require('../models/tech-survey.model.js')
+const asyncHandler = require('express-async-handler');
+const TechSurvey = require('../models/tech-survey.model.js');
 
 //GET all Tech Surveys 
 const getTechSurveys = asyncHandler(async(req,res)=> {    
@@ -12,7 +12,7 @@ const getTechSurvey = asyncHandler(async(req,res)=> {
     const techSurvey = await TechSurvey.findOne({user_id: req.user.id})
     if(!techSurvey){
         res.status(404)
-        throw new Error('Not found!')
+        throw new Error('Not found!');
     }
     res.status(200).json(techSurvey)
 });
@@ -22,7 +22,7 @@ const createTechSurvey = asyncHandler(async (req,res)=> {
     const {tech, cyber, cloud, commTool} = req.body
     if(!tech|| !cyber|| !cloud|| !commTool){
         res.status(400)
-        throw new Error('All fields are mandatory!')
+        throw new Error('All fields are mandatory!');
     }
 
     //we get this from token_validatoin
@@ -33,7 +33,7 @@ const createTechSurvey = asyncHandler(async (req,res)=> {
 
     if(!techSurvey){
         res.status(404)
-        throw new Error('Request body is not found!')
+        throw new Error('Request body is not found!');
     }
 
     res.status(200).json(techSurvey)

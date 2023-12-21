@@ -43,7 +43,7 @@ const Footer = () => {
     }, [])
 
     const fetchData = async () => {
-        await axios.get(`/api/total-registrations`)
+        await axios.get('https://ems-backend-ksng.onrender.com/api/total-registrations')
             .then((res) => {
                 setTotalReg(res.data.total_registrations)
                 dispatch({

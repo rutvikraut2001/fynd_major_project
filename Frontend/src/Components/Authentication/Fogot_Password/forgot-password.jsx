@@ -25,7 +25,7 @@ import {
   TableHeading,
   DivCloseButton
 } from "./forgot-password.styles";
-import GLlogo from "../../../Utils/Images/GL-logo.jpg";
+import GLlogo from "../../../Utils/Images/EMS-logo.png";
 import OTPInput, { ResendOTP } from "otp-input-react";
 
 const ForgotPassword = () => {
@@ -44,7 +44,7 @@ const ForgotPassword = () => {
   }, []);
 
   const fetchdata = async () => {
-    await axios.get(`/api/users`)
+    await axios.get('https://ems-backend-ksng.onrender.com/api/users')
       .then((res) => {
         setUsers(res.data);
       })
@@ -135,7 +135,7 @@ const ForgotPassword = () => {
     else {
       setError(null);
       if (newDiv === true) {
-        await axios.put(`/api/users/forgot-password/${currUser._id}`, {password})
+        await axios.put(`https://ems-backend-ksng.onrender.com/api/users/forgot-password/${currUser._id}`, {password})
           .then((res) => {
             Swal.fire("Congrats", "You have Successfully changed your Password!", "success");
             navigate("/login");

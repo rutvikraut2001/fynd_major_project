@@ -70,7 +70,7 @@ const ResetPassword = () => {
       setError(resetPassError);
     }
     else {
-      await axios.put(`/api/users/reset-password`, { password }, {
+      await axios.put(`https://ems-backend-ksng.onrender.com/api/users/reset-password`, { password }, {
         headers: {
           'Authorization': `Bearer ${localStorage.token}`
         }

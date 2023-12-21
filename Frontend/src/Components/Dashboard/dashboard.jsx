@@ -25,7 +25,7 @@ const Dashboard = () => {
     }, [])
 
     const fetchdata = async () => {
-        await axios.get(`/api/users/currentUser`, {
+        await axios.get(`https://ems-backend-ksng.onrender.com/api/users/currentUser`, {
             headers: {
                 'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
             }

@@ -54,7 +54,7 @@ const CompSurvey = () => {
         }
         else {
             setError(null);
-            await axios.post("/api/company-survey", compSurveyData, {
+            await axios.post("https://ems-backend-ksng.onrender.com/api/company-survey", compSurveyData, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.token}`
                 }

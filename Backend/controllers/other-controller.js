@@ -1,6 +1,6 @@
-const asyncHandler = require('express-async-handler')
-const Location = require('../models/location.model.js')
-const TotalRegs = require('../models/total-registration.model.js')
+const asyncHandler = require('express-async-handler');
+const Location = require('../models/location.model.js');
+const TotalRegs = require('../models/total-registration.model.js');
 
 //GET
 const getLocations = asyncHandler(async (req, res) => {
@@ -25,7 +25,7 @@ const updateTotalRegs = asyncHandler (async (req,res)=> {
 
     if(!total_registrations){
         res.status(401)
-        throw new Error('All fields are mandatory!')
+        throw new Error('All fields are mandatory!');
     }
 
     const updatedTotalRegs = await TotalRegs.findByIdAndUpdate(
@@ -36,7 +36,7 @@ const updateTotalRegs = asyncHandler (async (req,res)=> {
 
     if(!updatedCount){
         res.status(401)
-        throw new Error('Request body is not valid!')
+        throw new Error('Request body is not valid!');
     }
 
     res.status(200).json(updatedTotalRegs);

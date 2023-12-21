@@ -1,18 +1,18 @@
-const asyncHandler = require('express-async-handler')
-const TranspRequest = require('../models/transport-request.model')
+const asyncHandler = require('express-async-handler');
+const TranspRequest = require('../models/transport-request.model');
 
 //POST Transport-Request
 const createTranspReq = asyncHandler(async (req,res) => {
     const {empID,empName,location,pickupLocation,pickupAddress,dropLocation,dropAddress,startDate,endDate,returnTrip,weekDays} = req.body;
     if(!empName || !empID || !location || !pickupLocation || !pickupAddress || !dropLocation || !dropAddress || !startDate || !endDate || !returnTrip || !weekDays){
         res.status(401)
-        throw new Error('All fields are mandatory!')
+        throw new Error('All fields are mandatory!');
     }
     
     const transpReq = await TranspRequest.create(req.body);
     if(!transpReq){
         res.status(401)
-        throw new Error('Request body is not valid!')
+        throw new Error('Request body is not valid!');
     }
     res.status(201).json(transpReq);
 });

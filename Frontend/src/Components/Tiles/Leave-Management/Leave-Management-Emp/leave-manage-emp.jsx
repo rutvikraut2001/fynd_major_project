@@ -136,7 +136,7 @@ const LeaveManageEmp = () => {
   }, [])
 
   const fetchdata = async () => {
-    await axios.get(`/api/leaves-remain/empID/${empID}`, {
+    await axios.get(`https://ems-backend-ksng.onrender.com/api/leaves-remain/empID/${empID}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
@@ -148,7 +148,7 @@ const LeaveManageEmp = () => {
         console.log(err)
       });
 
-    await axios.get(`/api/leave-request/empID/${empID}`, {
+    await axios.get(`https://ems-backend-ksng.onrender.com/api/leave-request/empID/${empID}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
@@ -174,7 +174,7 @@ const LeaveManageEmp = () => {
   const [leaveDetails, setLeaveDetails] = useState({})
 
   const viewLeaveDetails = async (uid) => {
-    await axios.get(`/api/leave-request/${uid}`, {
+    await axios.get(`https://ems-backend-ksng.onrender.com/api/leave-request/${uid}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
@@ -210,7 +210,7 @@ const LeaveManageEmp = () => {
     }
     else {
       setError(null);
-      await axios.post("/api/leave-request", leaveRequest, {
+      await axios.post("https://ems-backend-ksng.onrender.com/api/leave-request", leaveRequest, {
         headers: {
           'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
         }

@@ -1,7 +1,7 @@
-const asyncHandler = require('express-async-handler')
-const Task = require('../models/task.model.js')
-const Users = require('../models/user.model.js')
-const sendMail = require('../utils/sendMail.js')
+const asyncHandler = require('express-async-handler');
+const Task = require('../models/task.model.js');
+const Users = require('../models/user.model.js');
+const sendMail = require('../utils/sendMail.js');
 
 //GET current Users Tasks
 const getTasksByUserId = asyncHandler(async(req,res)=> {    
@@ -15,7 +15,7 @@ const createTask = asyncHandler(async (req, res) => {
         const { user_id, assignedBy, task } = req.body
         if (!user_id || !assignedBy || !task) {
             res.status(400)
-            throw new Error('All fields are mandatory!')
+            throw new Error('All fields are mandatory!');
         }
         
         const TaskObj = await Task.create(req.body);
@@ -37,7 +37,7 @@ const createTask = asyncHandler(async (req, res) => {
 
         if (!TaskObj) {
             res.status(404)
-            throw new Error('Request body is not found!')
+            throw new Error('Request body is not found!');
         }
         return res.status(200).json(TaskObj)
     }catch(error){

@@ -95,7 +95,7 @@ function EmpListAdmin() {
   }, []);
 
   const fetchData = async () => {
-    await axios.get("/api/users")
+    await axios.get("https://ems-backend-ksng.onrender.com/api/users")
       .then((res) => {
         setUsers(res.data.filter((obj) => obj._id != currManager.id));
       })
@@ -126,7 +126,7 @@ function EmpListAdmin() {
 
   //-------------------DeleteUser-----------------
   const deleteUser = async (id) => {
-    await axios.delete(`/api/users/${id}`, {
+    await axios.delete(`https://ems-backend-ksng.onrender.com/api/users/${id}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
@@ -142,7 +142,7 @@ function EmpListAdmin() {
 
   //--------------------Individual data -----------
   const viewDetails = async (id) => {
-    await axios(`/api/users/${id}`, {
+    await axios(`https://ems-backend-ksng.onrender.com/api/users/${id}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
@@ -162,7 +162,7 @@ function EmpListAdmin() {
   const ChangeDesignation = async (id) => {
     setmodalval(false);
     if (selectOption !== currUser.designation) {
-      await axios.put(`/api/users/designation/${id}`, {
+      await axios.put(`https://ems-backend-ksng.onrender.com/api/users/designation/${id}`, {
         designation: selectOption,   //new designation
       }, {
         headers: {
@@ -210,7 +210,7 @@ function EmpListAdmin() {
       assignedBy: `${currManager.fname} ${currManager.lname}`,  //Manager's name 
       task: task,                             
     }
-    await axios.post(`/api/task`, reqObj, {
+    await axios.post(`https://ems-backend-ksng.onrender.com/api/task`, reqObj, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}` //for verification (IMP)
       }

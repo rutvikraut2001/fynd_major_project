@@ -1,5 +1,5 @@
-const asyncHandler = require('express-async-handler')
-const CompanySurvey = require('../models/company-survey.model.js')
+const asyncHandler = require('express-async-handler');
+const CompanySurvey = require('../models/company-survey.model.js');
 
 //GET all Tech Surveys 
 const getCompSurveys = asyncHandler(async(req,res)=> {    
@@ -12,7 +12,7 @@ const getCompSurvey = asyncHandler(async(req,res)=> {
     const compSurvey = await CompanySurvey.findOne({user_id: req.user.id});
     if(!compSurvey){
         res.status(404)
-        throw new Error('Not found!')
+        throw new Error('Not found!');
     }
     res.status(200).json(compSurvey)
 });
@@ -23,17 +23,17 @@ const createCompSurvey = asyncHandler(async (req,res)=> {
 
     if(!empSatisfaction|| !trainingDev|| !empEngagement|| !empBenifits|| !empLeadership|| !empFuturePlanning|| !empWorkDiversity|| !empCommunication){
         res.status(400)
-        throw new Error('All fields are mandatory!')
+        throw new Error('All fields are mandatory!');
     }
 
     //we get this from token_validatoin
-    req.body.empName = `${req.user.fname} ${req.user.lname}` 
+    req.body.empName = `${req.user.fname} ${req.user.lname}` ;
     req.body.user_id = req.user.id            
 
     const compSurvey = await CompanySurvey.create(req.body)
     if(!compSurvey){
         res.status(404)
-        throw new Error('Request body is not found!')
+        throw new Error('Request body is not found!');
     }
     res.status(200).json(compSurvey)
 });

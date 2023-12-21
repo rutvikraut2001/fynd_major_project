@@ -22,7 +22,7 @@ function RatingChart() {
   }, []);
 
   const fetchData = async () => {
-    await axios.get('/api/company-survey', {
+    await axios.get('https://ems-backend-ksng.onrender.com/api/company-survey', {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`
       }

@@ -85,7 +85,7 @@ const LeaveManageAdmin = () => {
   }, [])
 
   const fetchData = async () => {
-    await axios.get(`/api/leave-request`, {
+    await axios.get(`https://ems-backend-ksng.onrender.com/api/leave-request`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
@@ -105,14 +105,14 @@ const LeaveManageAdmin = () => {
   const [leavesRemain, setLeavesRemain] = useState({})
 
   const viewLeaveDetails = async (uid) => {
-    await axios.get(`/api/leave-request/${uid}`, {
+    await axios.get(`https://ems-backend-ksng.onrender.com/api/leave-request/${uid}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
     })
       .then(async (res) => {
         setLeaveDetails(res.data)
-        await axios.get(`/api/leaves-remain/empID/${res.data.empID}`, {
+        await axios.get(`https://ems-backend-ksng.onrender.com/api/leaves-remain/empID/${res.data.empID}`, {
           headers: {
             'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
           }
@@ -135,7 +135,7 @@ const LeaveManageAdmin = () => {
   // ---------------------------------------------------------------------------------
 
   const approveLeaveRequest = async (uid) => {
-    const leaveData = await axios.get(`/api/leave-request/${uid}`, {
+    const leaveData = await axios.get(`https://ems-backend-ksng.onrender.com/api/leave-request/${uid}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
@@ -146,13 +146,13 @@ const LeaveManageAdmin = () => {
       rejectReason: '-',
       status: 'Approved',                                //this is updated
     }
-    await axios.put(`/api/leave-request/${uid}`, reqObj, {
+    await axios.put(`https://ems-backend-ksng.onrender.com/api/leave-request/${uid}`, reqObj, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
     })
 
-    await axios.get(`/api/leaves-remain/empID/${leaveData.data.empID}`, {
+    await axios.get(`https://ems-backend-ksng.onrender.com/api/leaves-remain/empID/${leaveData.data.empID}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
@@ -179,7 +179,7 @@ const LeaveManageAdmin = () => {
           sickLeaves: sl,
           paidLeaves: pl
         }
-        await axios.put(`/api/leaves-remain/empID/${leaveData.data.empID}`, leavesRemainObj, {
+        await axios.put(`https://ems-backend-ksng.onrender.com/api/leaves-remain/empID/${leaveData.data.empID}`, leavesRemainObj, {
           headers: {
             'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
           }
@@ -225,7 +225,7 @@ const LeaveManageAdmin = () => {
       rejectReason: rejectReason,                               //this is updated
       status: 'Rejected',                                            //this is updated
     }
-    await axios.put(`/api/leave-request/${leaveid}`, reqObj, {
+    await axios.put(`https://ems-backend-ksng.onrender.com/api/leave-request/${leaveid}`, reqObj, {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`          //for verification (IMP)
       }
