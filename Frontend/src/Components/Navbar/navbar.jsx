@@ -73,7 +73,7 @@ const Navbar = () => {
                                         style={{ borderRadius: "50%", height: "80%" }}>
                                         <Text
                                             class="card-title" >
-                                            <b>{currUser.fname} {currUser.lname}</b>
+                                            <b>{currUser.fname} {currUser.lname}</b>    //Login icon First name and last name
                                         </Text>
                                         <Text
                                             class="card-title"
