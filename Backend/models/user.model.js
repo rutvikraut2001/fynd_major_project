@@ -20,7 +20,6 @@ const userSchema = new mongoose.Schema({
     phone: {
         type: Number,
         required: true,
-        unique: [true, 'Phone number is already registered!']
     },
     gender: {
         type: String,
