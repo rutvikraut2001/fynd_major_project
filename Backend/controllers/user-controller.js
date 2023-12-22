@@ -19,6 +19,7 @@ const getManagers = asyncHandler(async (req, res) => {
 
 //POST user
 const createUser = asyncHandler(async (req, res) => {
+    console.log("creating user");
     const body_fields = Object.keys(req.body);
 
     //Checks all fields(keys) are present in request body 
@@ -41,6 +42,7 @@ const createUser = asyncHandler(async (req, res) => {
 
     const user = await User.create(req.body)
     if (user) {
+        console.log("user created",user);
         res.status(201).json({
             id: user.id,
             email: user.email
