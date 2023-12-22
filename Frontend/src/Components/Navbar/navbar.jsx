@@ -22,7 +22,7 @@ import {
 const Navbar = () => {
     const isloggedin = useSelector(state => state.isloggedin);
     var currUser = useSelector((state) => state.currUser);
-    var initials = useSelector((state) => state.initials);
+    var initials = useSelector((state) => state.initials);  //Login icon Initials(Firstname and lastname)
 
     const [isOpen, setIsOpen] = useState(false);
     const windowRef = useRef();
@@ -73,7 +73,7 @@ const Navbar = () => {
                                         style={{ borderRadius: "50%", height: "80%" }}>
                                         <Text
                                             class="card-title" >
-                                            <b>{currUser.fname} {currUser.lname}</b>    //Login icon First name and last name
+                                            <b>{currUser.fname} {currUser.lname}</b>    
                                         </Text>
                                         <Text
                                             class="card-title"
