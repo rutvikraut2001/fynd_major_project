@@ -345,11 +345,21 @@ const TransportEmp = () => {
 
   useEffect(() => {
     if (startDate && endDate) {
-      setTransRequest({
-        ...transRequest, 'weekDays': CountWeekdays(startDate, endDate)
-      })
+      if (endDate < startDate) {
+        setError('End Date must be after Start Date!')
+        setTransRequest({
+          ...transRequest, 'weekDays': "Error"
+        })
+        return;
+      }
+      else {
+        setError(null)
+        setTransRequest({
+          ...transRequest, 'weekDays': CountWeekdays(startDate, endDate)
+        })
+      }
     }
-  }, [startDate, endDate])
+  }, [startDate, endDate]);
 
   const onCancel = () => {
     setTransRequest({
@@ -446,7 +456,7 @@ const TransportEmp = () => {
           <>
             <FormLabel>Week Days</FormLabel>
             <FormAstric>*</FormAstric>
-            <FormInput type="text" placeholder='Calculate Automatically' name='weekDays' value={weekDays} />
+            <FormInput style={{ color: weekDays === 'Error' && 'red' }} type="text" placeholder='Calculate Automatically' name='weekDays' value={weekDays} />
           </>
 
           {/* ----------------------------------------------------------------------- */}
