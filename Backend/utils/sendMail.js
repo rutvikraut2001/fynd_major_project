@@ -1,14 +1,15 @@
 const nodemailer = require("nodemailer");
 
 const getTaskAssignMailContent = (username, task, managerName) => {
-    const otp = Math.floor(1000 + Math.random() * 9000);
+   
     html = `
     <body>
-        Hello <b>${username}</b>,<br/>
+        <h3>Hello <b>${username}</b>,<br/>
         A new task is assigned to you by <b>${managerName}</b><br/>
         Task details : <b>${task}</b><br/>
         Regards,<br/>
         EMS
+        </h3>
     </body>
     `
     return html;
