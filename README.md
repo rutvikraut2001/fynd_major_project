@@ -1,0 +1,1 @@
+An Employee Management System is an Internal Platform that will be able to manage various operations situated in an organization such as appointing access privileges, managing transport of employees and payslips along with Leave Management, assigning tasks to the employees and giving feedback to the particular entity or a company. 
